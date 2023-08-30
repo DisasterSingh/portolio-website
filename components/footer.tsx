@@ -25,7 +25,7 @@ const FooterComponent = ({data}: {data: any}) => {
                 </div>
                 <div className="L2">
                 <div><Image src={data.mobileNumberLogo} alt=""  width={40} height={40}/></div>
-                    <div>+918934789372</div>
+                    <div>+91-{data.mobileNumber}</div>
                     <div><Image src={data.mobileNumberCopy} alt=""  width={40} height={40}/></div>
                 </div>
             </div>

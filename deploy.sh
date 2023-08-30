@@ -1,5 +1,5 @@
 set -e
-cd /home/ubuntu/portfolio-website || return
+cd /home/ubuntu/portolio-website || return
 
 export NVM_DIR=$HOME/.nvm;
 
