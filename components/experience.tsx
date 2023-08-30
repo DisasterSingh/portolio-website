@@ -1,6 +1,13 @@
 import { PortableText } from "@portabletext/react";
 
-const ExperienceComponent = ({data}) => {
+interface Experience {
+    companyName: string;
+    post: string;
+    descriptionOfPost: any; // Change the type if necessary
+    date: string; // Change the type if necessary
+    // Add more properties and their types if needed
+}
+const ExperienceComponent =({data}: {data: any}) => {
     return (
         <section className="Experience">
         <div className="container-4">
@@ -8,9 +15,9 @@ const ExperienceComponent = ({data}) => {
                 <div>{data.sectionName}</div>
             </div>
             <div className="F1">{data.description}</div>
-            {data.experiences.map(experience=>{
+            {data.experiences.map((experience :Experience, index: number)=>{
                 return (
-                    <div className="G1">
+                    <div className="G1" key= {index}>
                     <div className="upwork">{experience.companyName}</div>
                     <div className="G2">
                         <div className="Sr">{experience.post}</div>

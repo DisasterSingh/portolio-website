@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io', 'example.com'], // Add more domains if required
   },
+  distDir: 'dist',
 }
 
 module.exports = nextConfig

@@ -3,13 +3,13 @@ import groq from 'groq'
 import client from '../client'
 import NavComponent from '../components/navbar'
 import HeroComponent from '../components/hero'
-import sanityClient from './sanity-client'
+import sanityClient from '../sanity-client'
 import AboutComponent from '@/components/about'
 import SkillsComponent from '@/components/skills'
 import ExperienceComponent from '@/components/experience'
 import FooterComponent from '@/components/footer'
 
-const Index = ({res}) => {
+const Index = ({res} : {res: any}) => {
     return (
       <>
           <HeroComponent data={res.headerSectionData} />
@@ -25,7 +25,7 @@ const Index = ({res}) => {
 
 export default Index;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Fetch data from external API
   const aboutSectionData = await sanityClient.fetch(`*[_type == 'about'][0]{
     ...,

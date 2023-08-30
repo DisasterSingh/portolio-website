@@ -1,7 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const FooterComponent = ({data}) => {
+
+interface SocialLink {
+    imageUrl: string;
+    image: string;
+    imageAltText: string;
+  }
+
+const FooterComponent = ({data}: {data: any}) => {
     return (
         <div>
         <section className="contactme">
@@ -26,11 +33,14 @@ const FooterComponent = ({data}) => {
                 <div className="endf">
                     <div className="platforms">{data.endLine}</div>
                     <div className="socialmedia">
-                    {data.socialLinks.map(socialLink=>{
+                   
+                    {data.socialLinks.map((socialLink: SocialLink, index: number)=>{
                         return(
+                            <div key={index}>
                             <Link href={socialLink.imageUrl}>
                                 <div><Image src={socialLink.image} alt={socialLink.imageAltText}  width={25} height={25} /></div>
                                 </Link>
+                            </div>
                         )
                     })}
                     </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import {PortableText} from '@portabletext/react'
 
 
-const AboutComponent = ({data}) => {
+const AboutComponent = ({data}: {data: any}) => {
     return (
         <section className="About">
   <div className="AC">

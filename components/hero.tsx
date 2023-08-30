@@ -1,8 +1,15 @@
 import { PortableText } from "@portabletext/react";
-import sanityClient from "../pages/sanity-client";
+import sanityClient from "../sanity-client";
 import Image from "next/image";
 import Link from "next/link";
-const HeroComponent = ({data}) => {
+
+interface SocialLink {
+    imageUrl: string;
+    image: string;
+    imageAltText: string;
+  }
+  
+const HeroComponent = ({data}: {data: any}) => {
     return (
         <section className="Hero">
         <div className="container">
@@ -20,11 +27,14 @@ const HeroComponent = ({data}) => {
                     {/* </div> */} 
                 </div>
                 <div className="logo567">
-                    {data.socialLinks.map(socialLink=>{
+                
+                    {data.socialLinks.map((socialLink: SocialLink, index: number)=>{
                         return(
+                            <div key={index}>
                             <Link href={socialLink.imageUrl}>
                                 <div><Image src={socialLink.image} alt={socialLink.imageAltText}  width={25} height={25} /></div>
                                 </Link>
+                                </div>
                         )
                     })}
                 </div>
