@@ -1,5 +1,5 @@
 set -e
-cd /home/ubuntu/portfolio-devesh || return
+cd /home/ubuntu/portfolio-website || return
 
 export NVM_DIR=$HOME/.nvm;
 
