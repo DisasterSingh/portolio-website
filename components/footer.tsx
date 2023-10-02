@@ -19,12 +19,13 @@ const FooterComponent = ({data}: {data: any}) => {
             <div className="F4">{data.description}</div>
             <div>
                 <div className="L2">
-                    <div><Image src={data.mailAddressLogo} alt=""  width={50} height={40}/></div>
+                    <div>
+                        <a href={`mailto:${data.mailAddress}`}><Image src={data.mailAddressLogo} alt=""  width={50} height={40}/></a></div>
                     <div>{data.mailAddress}</div>
                     <div><Image src={data.mobileNumberCopy} alt=""  width={40} height={40}/></div>
                 </div>
                 <div className="L2">
-                <div><Image src={data.mobileNumberLogo} alt=""  width={40} height={40}/></div>
+                <div><a href={`tel:${data.mobileNumber}`}><Image src={data.mobileNumberLogo} alt=""  width={40} height={40}/></a></div>
                     <div>+91-{data.mobileNumber}</div>
                     <div><Image src={data.mobileNumberCopy} alt=""  width={40} height={40}/></div>
                 </div>
